@@ -10,11 +10,11 @@
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23101211'/%3E%3Cpath d='M10 27Q20 38 30 27M20 27V19M20 16C14 12 25 10 20 4' fill='none' stroke='%23d7d5ca' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
 <link as="image" data-muhyang-href="0" rel="preload"/>
 <link crossorigin="" href="https://gcore.jsdelivr.net" rel="preconnect"/>
-<link as="font" crossorigin="" href="https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff" rel="preload" type="font/woff"/>
+<link as="font" crossorigin="" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff" rel="preload" type="font/woff"/>
 <!-- Pretendard (SIL OFL 1.1), dynamic subset: https://github.com/orioncactus/pretendard -->
 <link crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
 <style>/* 정묵바위체 / 상상토끼: 웹 사용·임베딩 허용, 폰트 수정 및 유료 재판매 금지. https://noonnu.cc/font_page/395 */
-@font-face{font-family:'Jeongmeokbawi';src:url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff') format('woff');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Jeongmeokbawi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff') format('woff'),url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff') format('woff'),url('https://raw.githubusercontent.com/projectnoonnu/noonfonts_2001/1.1/SangSangRockOTF.woff') format('woff');font-style:normal;font-weight:400;font-display:swap}
 </style>
 <style>@charset "UTF-8";
 :root{color-scheme:dark;--ink:#101211;--paper:#d7d5ca;--muted:#92978f;--accent:#bc7960;font-family:'Jeongmeokbawi',serif}
@@ -1026,7 +1026,79 @@ body #dokkaebi-gallery header .room-brand,body #gallery-title{font-family:'Jeong
 #scroll-intro .scroll-tail{display:none!important}
 #ritual .ritual-offerings{display:none!important}
 #ritual #ritual-vapor{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:3!important;pointer-events:none!important;mix-blend-mode:normal!important}
-</style></head>
+</style><style id="muhyang-mobile-responsive">
+@media(max-width:980px){
+ #ritual:not([hidden]){overflow-y:auto!important;overflow-x:hidden!important;height:100dvh!important;padding:18px clamp(14px,4vw,30px) 90px!important;box-sizing:border-box!important}
+ #ritual .ritual-layout{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(74px,25%)!important;align-items:start!important;gap:12px!important;min-height:0!important;max-width:620px!important}
+ #ritual .ritual-center{grid-column:1;grid-row:1;order:0!important;width:100%!important;min-width:0!important;position:sticky!important;top:0;z-index:5;background:#dfd0b1;border-radius:8px;padding:4px 0!important}
+ #ritual .ritual-still{width:100%!important;height:clamp(155px,48vw,285px)!important;max-width:100%!important}
+ #ritual .ritual-caption{min-height:0!important;padding:5px 6px 8px!important}
+ #ritual #ritual-guidance,#ritual #ritual-state{font-size:12px!important;line-height:1.5!important;margin:4px 0!important;word-break:keep-all}
+ #ritual #ritual-meter{margin:8px auto!important}
+ #ritual .ritual-tools{grid-column:2;grid-row:1;order:0!important;position:sticky!important;top:0;z-index:6;display:flex!important;flex-direction:column!important;padding:8px 0!important;gap:4px!important;justify-content:center!important;align-items:center!important;background:#dfd0b1;border-radius:8px;min-width:0!important}
+ #ritual .ritual-pestle{width:60px!important;height:clamp(115px,35vw,175px)!important;min-width:0!important;transform:rotate(-9deg)!important;margin:0!important;background-size:contain!important}
+ #ritual .ritual-tools p{font-size:11px!important;line-height:1.5!important;text-align:center!important;max-width:100%!important;padding:0 3px}
+ #ritual .ritual-notes{grid-column:1/-1;grid-row:2;order:0!important;width:100%!important;max-width:none!important;padding:12px 0!important;min-width:0!important}
+ #ritual .ritual-drop-tray{display:flex!important;flex-direction:column!important;gap:8px!important;width:100%!important}
+ #ritual .ritual-offering-line{width:100%!important;min-height:84px!important;grid-template-columns:minmax(72px,30%) minmax(0,1fr)!important;gap:12px!important}
+ #ritual .ritual-drop-item{width:100%!important;max-width:100%!important;min-height:80px!important}
+ #ritual .ritual-offering-line .segmented-amount{max-width:none!important;min-width:0!important;height:44px!important}
+ #ritual .ritual-offering-line .segmented-amount input{height:34px!important}
+ #ritual #ritual-auto,#ritual #ritual-back{min-height:44px!important}
+ #result:not([hidden]){display:block!important;height:100dvh!important;overflow-y:auto!important;overflow-x:hidden!important;padding:0 0 76px!important}
+ #result>.result-header{height:auto!important;min-height:68px!important;position:relative!important;padding:18px 20px 8px!important}
+ #result #result-scroll-shell{display:block!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;padding:0 18px 24px!important}
+ #result #result-scroll-shell>.result-layout{display:flex!important;flex-direction:column!important;gap:16px!important;height:auto!important;min-height:0!important;max-height:none!important;padding:0 0 22px!important}
+ #result .result-portrait{height:auto!important;max-height:none!important;min-height:0!important}
+ #result .result-portrait img{height:auto!important;width:100%!important;max-height:min(55svh,480px)!important;min-height:0!important;flex:none!important;object-fit:contain!important}
+ #result .result-copy{height:auto!important;max-height:none!important;overflow:visible!important;justify-content:flex-start!important;padding:0 4px!important}
+ #result #result-fragrance-name{font-size:clamp(23px,6vw,32px)!important;line-height:1.4!important}
+ #result #result-description,#result #result-personality,#result #result-ingredients{font-size:14px!important;line-height:1.8!important}
+ #result .result-eyebrow,#result #result-modern,#result .profile-label,#result .result-recipe>p:first-child{font-size:12px!important;line-height:1.6!important}
+ #result #result-quote{font-size:16px!important;line-height:1.65!important}
+ #result .goblin-profile,#result .result-recipe{margin-top:12px!important}
+ #result .result-actions{flex-wrap:wrap!important;gap:8px 16px!important;margin-top:12px!important}
+ #result .result-actions .quiet-button,#result #result-home{font-size:13px!important;min-height:44px!important}
+ #result #result-scroll-shell>.dokkaebi-gallery{width:100%!important;min-width:0!important;max-width:none!important;height:auto!important;max-height:none!important;overflow:visible!important;border-left:0!important;border-top:1px solid #957a5755!important;padding:16px 0!important;gap:12px!important}
+ #result #result-scroll-shell .dokkaebi-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:auto!important;gap:12px 6px!important}
+ #result #result-scroll-shell .dokkaebi-card{width:100%!important;height:auto!important;min-height:52px!important;max-height:none!important}
+ #result #result-scroll-shell .dokkaebi-card img,#result #result-scroll-shell .dokkaebi-unknown{width:clamp(46px,14vw,66px)!important;height:clamp(46px,14vw,66px)!important;max-height:none!important}
+ #result #result-scroll-shell .dokkaebi-gallery h2{font-size:18px!important}
+ #result #result-scroll-shell .gallery-progress{font-size:12px!important}
+}
+@media(max-width:700px){
+ #scroll-intro{touch-action:none}
+ #scroll-intro .scroll-panel{padding:55px 16px 90px!important}
+ #scroll-intro .scroll-panel h2{max-width:100%!important;font-size:clamp(19px,5.7vw,28px)!important;line-height:1.8!important;word-break:keep-all}
+ #scroll-intro .scroll-cue{font-size:11px!important;bottom:max(28px,env(safe-area-inset-bottom))!important;max-width:90%;text-align:center}
+ #blending:not([hidden]){height:100dvh!important;padding:18px 16px 80px!important;overflow-y:auto!important;overflow-x:hidden!important}
+ #blending .blend-workspace:not([hidden]){flex:1 0 auto!important;min-height:0!important;height:auto!important;overflow:visible!important}
+ #blending .scent-grid{height:auto!important;max-height:none!important;overflow:visible!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px 10px!important;padding:16px 0!important}
+ #blending .scent-choice{min-width:0!important;max-width:100%!important}
+ #blending .scent-photo{max-width:100%!important}
+ #blending .selection-footer{position:sticky!important;bottom:0!important;flex-wrap:wrap!important;gap:6px!important;padding:12px 0!important;z-index:5;background:#e3d5b8!important}
+ #blending #blend-status{position:static!important;transform:none!important;width:100%!important;max-width:none!important;text-align:left!important;font-size:12px!important;pointer-events:auto!important}
+ #blending #begin-ritual{min-height:44px!important;margin-left:auto!important}
+ #blending #blend-back,#ritual #ritual-back,#result #result-home{bottom:max(12px,env(safe-area-inset-bottom))!important}
+ .room .room-header{left:14px!important;right:14px!important;top:max(14px,env(safe-area-inset-top))!important;gap:8px!important}
+ .room .room-header h2{font-size:21px!important}
+ .room .room-hint,.close-scene .close-hint{font-size:12px!important;max-width:calc(100vw - 28px)!important;word-break:keep-all}
+ .room .collection-bowl{width:95px!important;height:95px!important;right:12px!important;bottom:115px!important}
+ .room .collection-bowl img{width:95px!important;height:75px!important}
+ .room .collection-bowl .bowl-caption{font-size:11px!important}
+ .close-scene .detail-copy{left:14px!important;right:14px!important;width:auto!important;max-width:none!important;max-height:32svh!important;bottom:108px!important;background:#191612b8;padding:10px!important;border-radius:5px}
+ .close-scene .detail-copy h3{font-size:22px!important}
+ .close-scene .detail-description{font-size:13px!important;line-height:1.7!important}
+ .close-scene .detail-copy button,.room-return,.room-finish,.scent-count{min-height:44px!important}
+ #dokkaebi-detail{width:calc(100vw - 24px)!important;max-width:calc(100vw - 24px)!important;max-height:calc(100dvh - 24px)!important;padding:48px 16px 20px!important;overflow:auto!important}
+ #dokkaebi-detail .gallery-detail-layout{grid-template-columns:minmax(0,1fr)!important;gap:15px!important}
+ #dokkaebi-detail figure img{width:100%!important;max-height:48svh!important;object-fit:contain!important}
+ #dokkaebi-detail .gallery-detail-copy{min-width:0!important;overflow-wrap:anywhere}
+}
+@media(max-width:380px){#ritual .ritual-tools p{font-size:10px!important}#ritual .ritual-layout{gap:7px!important}#blending .scent-grid{gap:10px 6px!important}}
+</style>
+
+<style id="mobile-scroll-fix">@media(max-width:900px){#scroll-intro:not(.is-entering){touch-action:none!important;pointer-events:auto!important}#scroll-intro .scroll-track{display:flex!important;width:400vw!important;flex-wrap:nowrap!important}#scroll-intro .scroll-panel{flex:0 0 100vw!important;width:100vw!important;min-width:100vw!important}#scroll-intro .scroll-cue{pointer-events:auto!important;cursor:pointer;touch-action:none}#scroll-intro .scroll-panel h2{font-family:'Jeongmeokbawi','AppleMyungjo','Noto Serif KR',serif!important;-webkit-text-size-adjust:100%}}</style></head>
 <body>
 <main aria-label="무형향방, 향을 따라 들어가는 첫 장면" class="experience" data-phase="idle" id="experience">
 <div aria-hidden="true" class="ambient"></div>
@@ -2246,8 +2318,12 @@ function paperTurn(){
 function applyStep(n){ step=Math.max(0,Math.min(3,n)); if(track) track.style.transform=`translateX(-${step*100}vw)`; intro.dataset.step=String(step); }
 function advance(dir){ if(lock) return; if(dir>0 && step===3){ if(!intro.classList.contains('is-entering')){ paperTurn(); intro.classList.add('is-entering'); setTimeout(()=>enterBtn&&enterBtn.click(),matchMedia('(prefers-reduced-motion:reduce)').matches?50:1160);} return; } const next=Math.max(0,Math.min(3,step+dir)); if(next===step) return; lock=true; paperTurn(); applyStep(next); setTimeout(()=>lock=false,950); }
 intro.addEventListener('wheel',e=>{ if(intro.closest('[hidden]')) return; e.preventDefault(); if(Math.abs(e.deltaY)<12) return; advance(e.deltaY>0?1:-1); },{passive:false});
-intro.addEventListener('touchstart',e=>{touchY=e.touches[0].clientY;},{passive:true});
-intro.addEventListener('touchend',e=>{ const dy=touchY-(e.changedTouches[0]?.clientY||touchY); if(Math.abs(dy)>28) advance(dy>0?1:-1); },{passive:true});
+let touchX=0,touchId=null;
+intro.addEventListener('touchstart',e=>{if(e.touches.length!==1){touchId=null;return;}const p=e.touches[0];touchX=p.clientX;touchY=p.clientY;touchId=p.identifier;},{passive:true});
+intro.addEventListener('touchmove',e=>{if(touchId!==null&&e.cancelable)e.preventDefault();},{passive:false});
+intro.addEventListener('touchend',e=>{const p=Array.from(e.changedTouches).find(p=>p.identifier===touchId);touchId=null;if(!p)return;const dx=touchX-p.clientX,dy=touchY-p.clientY,delta=Math.abs(dx)>Math.abs(dy)?dx:dy;if(Math.abs(delta)>24)advance(delta>0?1:-1);},{passive:true});
+intro.addEventListener('touchcancel',()=>{touchId=null;},{passive:true});
+intro.addEventListener('click',e=>{if(e.target.closest('.scroll-cue'))advance(1);});
 window.addEventListener('keydown',e=>{ if(intro.hidden) return; if(e.key==='ArrowDown' || e.key==='PageDown' || e.key===' '){ e.preventDefault(); advance(1);} if(e.key==='ArrowUp' || e.key==='PageUp'){ e.preventDefault(); advance(-1);} });
 applyStep(0);
 
