@@ -1018,7 +1018,7 @@ body #dokkaebi-gallery header .room-brand,body #gallery-title{font-family:'Jeong
 #blending .selection-footer{border:0!important;box-shadow:none!important;}
 /* The physical room's full-view button must sit above all exploration hotspots. */
 .close-scene .close-header{position:absolute;z-index:35!important;pointer-events:none!important;}
-.close-scene .close-header #detail-close{position:relative;z-index:36!important;pointer-events:auto!important;cursor:pointer!important;}
+#object-detail > #detail-close{position:fixed;z-index:100!important;pointer-events:auto!important;cursor:pointer!important;touch-action:manipulation;min-height:44px;min-width:44px;}
 #result .result-portrait #result-name{display:none!important;}
 </style>
 <style id="gallery-close-minimal">#dokkaebi-detail #gallery-detail-close{background:transparent!important;color:#473b2b!important;border:0!important;box-shadow:none!important;text-shadow:none!important;padding:8px!important;min-width:44px;min-height:44px;font-size:28px!important;line-height:1!important;letter-spacing:0!important;display:grid;place-items:center}#dokkaebi-detail #gallery-detail-close:hover{opacity:.68}#dokkaebi-detail #gallery-detail-close:focus-visible{outline:2px solid #473b2b;outline-offset:2px}</style>
@@ -1885,6 +1885,7 @@ body #dokkaebi-gallery header .room-brand,body #gallery-title{font-family:'Jeong
     detailClosing=true;detail.inert=true;
     const finish=()=>{roomGuide();detail.hidden=true;detailClosing=false;viewport.inert=false;room.querySelector('.room-footer').inert=false;if(!room.inert)lastTarget?.focus({preventScroll:true});};
     if(reduced.matches){finish();return;}
+    if(typeof detail.animate!=='function'){finish();return;}
     const fade=detail.animate([{opacity:getComputedStyle(detail).opacity},{opacity:0}],{duration:550,easing:'ease-in-out',fill:'forwards'});
     fade.finished.then(()=>{finish();fade.cancel();},finish);
   }
